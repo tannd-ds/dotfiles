@@ -1,6 +1,12 @@
 " KEY CONFIGURATION ---------------------------------------------------------------------
 "" Remap the ESC Key.
 inoremap jk <ESC>
+" Auto-bracket
+inoremap {<CR> {<CR>}<ESC>O
+inoremap /*<CR> /*<CR>*/<ESC>O
+inoremap ";<CR>  "";<left><left>
+" C++ Stuffs
+inoremap main<CR> int main() {<CR>}<ESC>O<TAB>return 0;<ESC>O
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
@@ -28,4 +34,4 @@ set tabstop=4
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
-
+set autoindent
