@@ -1,3 +1,9 @@
+" THEME ---------------------------------------------------------------------------------
+packadd! dracula
+syntax enable
+colorscheme dracula
+
+
 " KEY CONFIGURATION ---------------------------------------------------------------------
 "" Remap the ESC Key.
 inoremap jk <ESC>
@@ -5,8 +11,6 @@ inoremap jk <ESC>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap /*<CR> /*<CR>*/<ESC>O
 inoremap ";<CR>  "";<left><left>
-" C++ Stuffs
-inoremap main<CR> int main() {<CR>}<ESC>O<TAB>return 0;<ESC>O
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
@@ -20,7 +24,9 @@ filetype on
 
 " DISPLAY CONFIGURATION -----------------------------------------------------------------
 syntax on " highlight syntax.
-set relativenumber " Show line relative numbers
+set cursorline
+set relativenumber 
+set number
 set ruler " Show file stats
 set noswapfile " disable the swapfile
 set hlsearch " highlight all results
