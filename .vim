@@ -1,1 +1,0 @@
-/home/tannd/.vim
