@@ -1,1 +1,1 @@
-.vim
+/home/tannd/.vim
