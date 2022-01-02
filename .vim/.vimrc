@@ -27,15 +27,13 @@ vnoremap <Leader>s :sort<CR>
 au filetype cpp nnoremap <F9> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
 inoremap {<CR> {<CR>}<ESC>O " Auto close { bracket
 
-" Color scheme
-set t_Co=256
-color onedark
-
 " Pathogen load
 filetype off
-
 call pathogen#infect()
 call pathogen#helptags()
+" Color theme
+set t_Co=256
+color dracula
 
 filetype plugin indent on
 syntax on
@@ -51,7 +49,7 @@ set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
 "set colorcolumn=80
 highlight ColorColumn ctermbg=233
-highlight CursorLineNr ctermfg=148 " hightlight Current Line Number
+"highlight CursorLineNr ctermfg=148 " hightlight Current Line Number
 
 " Change tab witdh to 4
 set tabstop=4
