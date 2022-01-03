@@ -31,7 +31,7 @@ inoremap {<CR> {<CR>}<ESC>O " Auto close { bracket
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
-" Color theme
+" Color scheme
 set t_Co=256
 color dracula
 
