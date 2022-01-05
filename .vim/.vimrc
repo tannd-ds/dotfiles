@@ -17,15 +17,14 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 
 "---Key Binding with Leader Key------------------------------------------------
-" Moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>m <esc>:tabnext<CR>
 " Sort
 vnoremap <Leader>s :sort<CR>
 
 " Map F9 to compile and execute .cpp files
-au filetype cpp nnoremap <F9> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
-inoremap {<CR> {<CR>}<ESC>O " Auto close { bracket
+au filetype cpp nnoremap <F9> :w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
+au filetype cpp inoremap <F9> :w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
+" Auto close { bracket
+inoremap {<CR> {<CR>}<ESC>O
 
 " Pathogen load
 filetype off
@@ -41,15 +40,16 @@ syntax on
 set nocompatible
 set nocp
 
+hi Normal guibg=NONE ctermbg=NONE
 set number " show line numbers
 set relativenumber " show relativenumber
 set cursorline
 set tw=79 " width of document (used by gd)
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
+set scrolloff=5
 "set colorcolumn=80
-highlight ColorColumn ctermbg=233
-"highlight CursorLineNr ctermfg=148 " hightlight Current Line Number
+"highlight ColorColumn ctermbg=233
 
 " Change tab witdh to 4
 set tabstop=4
@@ -86,3 +86,4 @@ let g:NERDTreeWinPos = "left" " Set NERDTree default Position
 map <Leader>t <plug>NERDTreeTabsToggle<CR>
 " move to the first buffer
 autocmd VimEnter * wincmd p
+
