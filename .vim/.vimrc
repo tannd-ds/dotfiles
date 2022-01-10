@@ -20,11 +20,13 @@ map <c-l> <c-w>l
 " Sort
 vnoremap <Leader>s :sort<CR>
 
-" Map F9 to compile and execute .cpp files
+" Map F9 to compile and execute files
 au filetype cpp nnoremap <F9> :w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
-au filetype cpp inoremap <F9> :w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
+au filetype cpp inoremap <F9> <ESC>:w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
+au filetype python  nnoremap <F9> :w <bar> exec '!clear && python3 '.shellescape('%')<CR>
 " Auto close { bracket
 inoremap {<CR> {<CR>}<ESC>O
+map <leader>N <ESC>:set nu! relativenumber!<CR>
 
 " Pathogen load
 filetype off
@@ -40,7 +42,7 @@ syntax on
 set nocompatible
 set nocp
 
-hi Normal guibg=NONE ctermbg=NONE
+hi  Normal guibg=NONE ctermbg=NONE
 set number " show line numbers
 set relativenumber " show relativenumber
 set cursorline
