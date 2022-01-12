@@ -75,10 +75,11 @@ set wildmode=list:longest,full
 set clipboard=unnamedplus
 
 "---Plugin Configeration-------------------------------------------------------
-"" vim-powerline
+"" vim-airline
 set laststatus=2
-let g:Powerline_colorscheme = 'solarized256'
-let g:Powerline_stl_path_style = 'filename'
+let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree
 let g:NERDTreeWinPos = "left" " Set NERDTree default Position
