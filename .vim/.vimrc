@@ -6,14 +6,16 @@ let mapleader = "," " Rebind <Leader> key
 inoremap jk <ESC>l
 
 "---Key Binding with Ctrl-------------------------------------------------------
-" Removes highlight of last search
-noremap  <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
 
 "---Key Binding with Leader Key------------------------------------------------
 " Sort
 vnoremap <Leader>s :sort<CR>
+
+nnoremap <Leader><TAB> :tabn<CR>
+" Removes highlight of last search
+inoremap <Leader>n :nohl<CR>
+noremap  <Leader>n :nohl<CR>
+vnoremap <Leader>n :nohl<CR>
 
 " Map F9 to compile and execute files
 au filetype cpp nnoremap <F9> :w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
