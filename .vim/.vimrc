@@ -10,11 +10,6 @@ inoremap jk <ESC>l
 noremap  <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
-" Jump windows by Ctrl <movement> instead of Ctrl w <movement>
-map <c-h> <c-w>h
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
 
 "---Key Binding with Leader Key------------------------------------------------
 " Sort
@@ -24,6 +19,9 @@ vnoremap <Leader>s :sort<CR>
 au filetype cpp nnoremap <F9> :w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
 au filetype cpp inoremap <F9> <ESC>:w <bar> exec '!clear && g++ '.shellescape('%').' -o '.shellescape('out').' && ./'.shellescape('out')<CR>
 au filetype python  nnoremap <F9> :w <bar> exec '!clear && python3 '.shellescape('%')<CR>
+" GDC Debuger
+packadd termdebug
+let g:termdebug_wide=1
 " Auto close { bracket
 inoremap {<CR> {<CR>}<ESC>O
 map <leader>N <ESC>:set nu! relativenumber!<CR>
