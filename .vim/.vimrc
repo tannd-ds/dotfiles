@@ -90,3 +90,8 @@ map <Leader>t <plug>NERDTreeTabsToggle<CR>
 " move to the first buffer
 autocmd VimEnter * wincmd p
 
+" auto-correction
+ab iostraem iostream
+ab inlucde include
+ab incldue include
+ab inlcude include
