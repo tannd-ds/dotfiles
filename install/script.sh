@@ -14,8 +14,9 @@ sudo apt-get install wget
 echo -e "\033[0;32mInstalling Alacritty...\033[0;37m"
 sudo snap install alacritty
 # neoVim
-echo -e "\033[0;32mInstalling NeoVim...\033[0;37m"
+echo -e "\033[0;32mInstalling Vim & NeoVim...\033[0;37m"
 sudo apt install neovim
+sudo apt install vim
 # Python
 echo -e "\033[0;32mInstalling Python...\033[0;37m"
 sudo apt-get install python3 python3-venv python3-pip pip
@@ -63,6 +64,8 @@ mkdir Wallpapers
 cd Wallpapers
 wget -O astronaut-wallpaper.jpg "https://docs.google.com/uc?export=download&id=19Wrrlz9RO2x9m34xGwgrOF8RGDtCfCU8"
 
+# Install Vim Plugins using Vim-plug
+vim -c ':PlugInstall'
 
 echo "\033[0;32mTo Change Theme, open Tweaks -> Extensions and enable 'User themes'\033[0;37m"
 echo "\033[0;32mTo change Wallpaper, direct to ~/Pictures/Wallpapers\033[0;37m"
