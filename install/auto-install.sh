@@ -27,7 +27,7 @@ sudo snap install neovim --classic
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # Install Vim Plugins using Vim-plug
-gnome-terminal -- nvim -c ':PlugInstall'
+gnome-terminal -- nvim -c ':PlugInstall|q|q'
 # MS Teams
 echo -e "\033[0;32mInstalling MS Teams...\033[0;37m"
 sudo apt install teams
