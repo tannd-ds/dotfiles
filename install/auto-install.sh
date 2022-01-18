@@ -26,6 +26,8 @@ sudo snap install neovim --classic
 # Install plug.vim for NeoVim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# Install Vim Plugins using Vim-plug
+gnome-terminal -- nvim -c ':PlugInstall'
 # MS Teams
 echo -e "\033[0;32mInstalling MS Teams...\033[0;37m"
 sudo apt install teams
@@ -70,8 +72,6 @@ mkdir Wallpapers
 cd Wallpapers
 wget -O astronaut-wallpaper.jpg "https://docs.google.com/uc?export=download&id=19Wrrlz9RO2x9m34xGwgrOF8RGDtCfCU8"
 
-# Install Vim Plugins using Vim-plug
-gnome-terminal -- nvim -c ':PlugInstall'
 
 echo "\033[0;32mTo Change Theme, open Tweaks -> Extensions and enable 'User themes'\033[0;37m"
 echo "\033[0;32mTo change Wallpaper, direct to ~/Pictures/Wallpapers\033[0;37m"
