@@ -7,20 +7,24 @@ echo -e "\033[0;32mInstalling Tweaks...\033[0;37m"
 sudo add-apt-repository universe
 sudo apt install gnome-tweak-tool
 sudo apt install gnome-shell-extensions
-# wget
+# wget && snap
 sudo apt-get install wget
+sudo apt install snap
 
+# Python
+echo -e "\033[0;32mInstalling Python...\033[0;37m"
+sudo apt-get install python3 python3-venv python3-pip pip
+sudo pip install jupyter
 # Alacrity - Terminal Emulator
 echo -e "\033[0;32mInstalling Alacritty...\033[0;37m"
 sudo snap install alacritty
 # neoVim
 echo -e "\033[0;32mInstalling Vim & NeoVim...\033[0;37m"
-sudo apt install neovim
 sudo apt install vim
-# Python
-echo -e "\033[0;32mInstalling Python...\033[0;37m"
-sudo apt-get install python3 python3-venv python3-pip pip
-sudo pip install jupyter
+sudo snap install neovim --classic
+# Install plug.vim for NeoVim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # MS Teams
 echo -e "\033[0;32mInstalling MS Teams...\033[0;37m"
 sudo apt install teams
