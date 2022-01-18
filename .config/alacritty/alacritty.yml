@@ -369,7 +369,6 @@ colors: *Dracula
 background_opacity: 0.95
 
 key_bindings:
-    # (Windows, Linux, and BSD only)
   - { key: V,         mods: Control|Shift, action: Paste                       }
   - { key: C,         mods: Control|Shift, action: Copy                        }
   - { key: Insert,    mods: Shift,         action: PasteSelection              }
@@ -380,8 +379,7 @@ key_bindings:
   - { key: F11,       mods: None,          action: ToggleFullscreen            }
   - { key: Paste,     mods: None,          action: Paste                       }
   - { key: Copy,      mods: None,          action: Copy                        }
-  - { key: L,         mods: Control,       action: ClearLogNotice              }
-  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: L,         mods: Control,       chars: "clear\n"                    }
   - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
   - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
   - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
