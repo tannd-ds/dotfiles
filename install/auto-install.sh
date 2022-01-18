@@ -49,6 +49,7 @@ echo -e "\033[0;32mInstalling Orchis Themes...\033[0;37m"
 git clone https://github.com/vinceliuice/Orchis-theme orchis-theme
 cd orchis-theme
 ./install.sh -t grey
+cd ..
 
 # install Powerline font (for vim statusline)
 echo -e "\033[0;32mInstalling Powerline Fonts...\033[0;37m"
@@ -70,7 +71,7 @@ cd Wallpapers
 wget -O astronaut-wallpaper.jpg "https://docs.google.com/uc?export=download&id=19Wrrlz9RO2x9m34xGwgrOF8RGDtCfCU8"
 
 # Install Vim Plugins using Vim-plug
-vim -c ':PlugInstall'
+gnome-terminal -- nvim -c ':PlugInstall'
 
 echo "\033[0;32mTo Change Theme, open Tweaks -> Extensions and enable 'User themes'\033[0;37m"
 echo "\033[0;32mTo change Wallpaper, direct to ~/Pictures/Wallpapers\033[0;37m"
