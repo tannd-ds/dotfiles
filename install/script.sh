@@ -10,6 +10,7 @@ sudo apt install gnome-shell-extensions
 # wget && snap
 sudo apt-get install wget
 sudo apt install snap
+sudo apt install git
 
 # Python
 echo -e "\033[0;32mInstalling Python...\033[0;37m"
