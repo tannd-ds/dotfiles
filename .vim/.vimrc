@@ -10,6 +10,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 let mapleader = "," " Rebind <Leader> key
@@ -85,10 +87,18 @@ set laststatus=2
 let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.maxlinenr = ' ☰ '
+let g:airline_symbols.linenr = ' '
+let g:airline_symbols.colnr = ' '
 
 "" NERDTree
 let g:NERDTreeWinPos = "left" " Set NERDTree default Position
-"autocmd vimenter * NERDTree " load up the nerd tree
 map <Leader>t <plug>NERDTreeTabsToggle<CR>
 " move to the first buffer
 autocmd VimEnter * wincmd p
