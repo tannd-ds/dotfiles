@@ -35,9 +35,7 @@ sudo apt install teams
 ## ----- MAKE SYMBOLIC LINK FOR CONFIGURATION FILES -----
 echo -e "\033[0;32mCreating Symbolic links for Config files...\033[0;37m"
 # in ~/ folder
-ln -s ~/dotfiles/.vimrc ~/
-ln -s ~/dotfiles/.bashrc ~/
-ln -s ~/dotfiles/.vim ~/
+ln -s ~/dotfiles/home/.* ~/
 # in ~/.config folder
 ln -s ~/dotfiles/.config/* ~/.config/
 
