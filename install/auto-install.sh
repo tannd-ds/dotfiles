@@ -33,6 +33,8 @@ echo -e "\033[0;32mInstalling MS Teams...\033[0;37m"
 sudo apt install teams
 
 ## ----- MAKE SYMBOLIC LINK FOR CONFIGURATION FILES -----
+echo -e "\033[0;32mCloning essential files to home...\033[0;37m"
+git clone https://github.com/tannd-ds/dotfiles.gitd ~/dotfiles
 echo -e "\033[0;32mCreating Symbolic links for Config files...\033[0;37m"
 # in ~/ folder
 ln -s ~/dotfiles/home/.* ~/
