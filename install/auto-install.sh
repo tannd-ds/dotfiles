@@ -18,11 +18,13 @@ sudo apt-get install python3 python3-venv python3-pip pip
 sudo pip install jupyter
 # Alacrity - Terminal Emulator
 echo -e "\033[0;32mInstalling Alacritty...\033[0;37m"
-sudo snap install alacritty
+sudo snap install alacritty --classic
 # neoVim
 echo -e "\033[0;32mInstalling Vim & NeoVim...\033[0;37m"
 sudo apt install vim
 sudo snap install neovim --classic
+echo -e "\033[0;32mInstalling tmux...\033[0;37m"
+sudo apt install tmux
 # Install plug.vim for NeoVim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -37,7 +39,9 @@ echo -e "\033[0;32mCloning essential files to home...\033[0;37m"
 git clone https://github.com/tannd-ds/dotfiles.gitd ~/dotfiles
 echo -e "\033[0;32mCreating Symbolic links for Config files...\033[0;37m"
 # in ~/ folder
-ln -s ~/dotfiles/home/.* ~/
+for file in ~/dotfiles/home/.*; do
+	ln -s ${file} ~/
+done
 # in ~/.config folder
 ln -s ~/dotfiles/.config/* ~/.config/
 
