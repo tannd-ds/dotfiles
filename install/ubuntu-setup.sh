@@ -1,5 +1,8 @@
 #!/bin/sh
 
+cd ~
+mkdir removeLater
+
 # gnome-tweak-tool
 echo -e "\033[0;32mInstalling Tweaks...\033[0;37m"
 sudo add-apt-repository universe
@@ -72,34 +75,35 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # Install Vim Plugins using Vim-plug
 gnome-terminal -- nvim -c ':PlugInstall|q|q'
 
-cd ~/dotfiles/install
-mkdir removeLater
-cd removeLater
-
 # install Orchis Theme
-cd ~/dotfiles/install/removeLater
 echo -e "\033[0;32mInstalling Orchis Themes...\033[0;37m"
+cd ~/removeLater
 git clone https://github.com/vinceliuice/Orchis-theme orchis-theme
 cd orchis-theme
 ./install.sh -t grey
-cd ..
 
 # install Powerline font (for vim statusline)
 echo -e "\033[0;32mInstalling Powerline Fonts...\033[0;37m"
+cd ~/removeLater
 git clone https://github.com/powerline/fonts powerline-fonts
 cd powerline-fonts
 ./install.sh
-cd ..
 
 # Install Chrome
 echo -e "\033[0;32mInstalling Chrome...\033[0;37m"
-cd ~/dotfiles/install/removeLater
+cd ~/removeLater
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
+cd ~/removeLater
+git clone https://gitlab.gnome.org/GNOME/gnome-shell-extensions gnome-shell-extensions
+mv gnome-shell-extensions/extensions/user-theme/ ~/.local/share/gnome-shell/
+
 # Download Wallpaper
-cd ~/Pictures
-wget -O astronaut-wallpaper.jpg "https://docs.google.com/uc?export=download&id=19Wrrlz9RO2x9m34xGwgrOF8RGDtCfCU8"
+wget -O ~/Pictures/astronaut-wallpaper.jpg "https://docs.google.com/uc?export=download&id=19Wrrlz9RO2x9m34xGwgrOF8RGDtCfCU8"
+
+# Remove unused files (~/removeLater)
+rm -r ~/removeLater
 
 echo "\033[0;32mTo Change Theme, open Tweaks -> Extensions and enable 'User themes'\033[0;37m"
-echo "\033[0;32mTo change Wallpaper, direct to ~/Pictures/Wallpapers\033[0;37m"
+echo "\033[0;32mTo change Wallpaper, direct to ~/Pictures/\033[0;37m"
