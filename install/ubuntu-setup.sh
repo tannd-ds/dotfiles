@@ -5,7 +5,26 @@ echo -e "\033[0;32mInstalling Tweaks...\033[0;37m"
 sudo add-apt-repository universe
 sudo apt install gnome-tweak-tool
 sudo apt install gnome-shell-extensions
-# wget && snap
+
+## ----- MAKE SYMBOLIC LINK FOR CONFIGURATION FILES -----
+echo -e "\033[0;32mCreating Symbolic links for Config files...\033[0;37m"
+# in ~/ folder
+rm ~/.bashrc
+for file in ~/dotfiles/home/.*; do
+	ln -sf ${file} ~/
+done
+
+# in ~/.config folder
+if [ -d ~/.config ]
+then
+	echo ".config exists in home directory..."
+	ln -sf ~/dotfiles/.config/* ~/.config/
+else
+	echo ".config doesn't exist, create one..."
+	ln -sf ~/dotfiles/.config ~/
+fi
+
+# Helper
 echo -e "\033[0;32mInstalling wget...\033[0;37m"
 sudo apt-get install wget
 echo -e "\033[0;32mInstalling curl...\033[0;37m"
@@ -46,16 +65,6 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EB3E94ADBE1229CF
 sudo apt update
 sudo apt install teams
-
-## ----- MAKE SYMBOLIC LINK FOR CONFIGURATION FILES -----
-echo -e "\033[0;32mCreating Symbolic links for Config files...\033[0;37m"
-# in ~/ folder
-rm ~/.bashrc
-for file in ~/dotfiles/home/.*; do
-	ln -s ${file} ~/
-done
-# in ~/.config folder
-ln -s ~/dotfiles/.config/* ~/.config/
 
 # Install plug.vim for NeoVim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
