@@ -106,8 +106,8 @@ wget -O ~/Pictures/astronaut-wallpaper.jpg "https://docs.google.com/uc?export=do
 rm -r ~/removeLater
 
 # Markdown packages
-sudo apt install pandoc
-sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+sudo apt install pandoc zathura
+sudo apt install texlive-latex-extra
 sudo apt-get install texlive-xetex # Required for Unicode Text (wrote in Vietnamese)
 
 echo "\033[0;32mTo Change Theme, open Tweaks -> Extensions and enable 'User themes'\033[0;37m"
