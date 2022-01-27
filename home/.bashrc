@@ -120,3 +120,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Load Personal Script Files
+for file in ${HOME}/scripts/*
+do
+	echo ${file}
+	source ${file}
+done
