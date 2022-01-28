@@ -123,6 +123,8 @@ fi
 # Load Personal Script Files
 for file in ${HOME}/scripts/*
 do
-	echo ${file}
-	source ${file}
+	if [ "${file##*/}" != 'README.md' ]
+	then
+		source ${file}
+	fi
 done
