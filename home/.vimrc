@@ -1,5 +1,6 @@
 autocmd! bufwritepost .vimrc source % " Automatic reloading of .vimrc
 autocmd BufWritePre * %s/\s\+$//e " gets rid of extra space
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 call plug#begin()
 " Themes
@@ -22,18 +23,19 @@ Plug 'github/copilot.vim'
 Plug 'bfrg/vim-cpp-modern'
 " Markdown
 Plug 'godlygeek/tabular' | Plug 'tpope/vim-markdown'
-Plug 'davidgranstrom/nvim-markdown-preview'
+
 call plug#end()
 
 let mapleader = "," " Rebind <Leader> key
 inoremap jk <ESC>l
 "---Key Binding with Ctrl-------------------------------------------------------
+au filetype markdown map <Leader>m :!pandoc --pdf-engine=xelatex % -o %:r.pdf<CR>
 
 "---Key Binding with Leader "Key------------------------------------------------
 " Sort
 vnoremap <Leader>s :sort<CR>
 
-nnoremap <Leader><TAB> :tabn<CR>
+nnoremap <Leader><TAB> :bn<CR>
 map <leader>N <ESC>:set nu! relativenumber!<CR>
 " Removes highlight of last search
 inoremap <Leader>n :nohl<CR>
